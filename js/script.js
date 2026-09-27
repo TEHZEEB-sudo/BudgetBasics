@@ -1124,7 +1124,7 @@ function addExpense() {
 
     if (message) {
 
-        message.innerText =
+        message.innerHTML =
             '<i class="fa-solid fa-circle-check"></i> Expense added successfully!';
 
         message.style.color =
