@@ -1,0 +1,38 @@
+[
+    {
+        "item": "New gaming console",
+        "icon": "fa-solid fa-gamepad",
+        "answer": "want",
+        "explanation": "A gaming console is fun but not essential — you can live and study without it, so it is a want."
+    },
+    {
+        "item": "Monthly bus pass",
+        "icon": "fa-solid fa-bus",
+        "answer": "need",
+        "explanation": "You need transport to get to school or work, so a bus pass is a need."
+    },
+    {
+        "item": "School textbooks",
+        "icon": "fa-solid fa-book",
+        "answer": "need",
+        "explanation": "Books and education are essential for your studies, so textbooks are a need."
+    },
+    {
+        "item": "Latest branded sneakers",
+        "icon": "fa-solid fa-shoe-prints",
+        "answer": "want",
+        "explanation": "Plain shoes already cover your basics — the branded pair is a want driven by style."
+    },
+    {
+        "item": "Basic groceries and fruit",
+        "icon": "fa-solid fa-apple-whole",
+        "answer": "need",
+        "explanation": "Food is essential for daily life and health, so groceries are a need."
+    },
+    {
+        "item": "Movie streaming subscription",
+        "icon": "fa-solid fa-clapperboard",
+        "answer": "want",
+        "explanation": "Entertainment is enjoyable but optional, so a streaming subscription is a want."
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "value": "Needs",
+        "label": "Needs",
+        "icon": "fa-solid fa-house"
+    },
+    {
+        "value": "Food",
+        "label": "Food",
+        "icon": "fa-solid fa-burger"
+    },
+    {
+        "value": "Transport",
+        "label": "Transport",
+        "icon": "fa-solid fa-bus"
+    },
+    {
+        "value": "Education",
+        "label": "Education",
+        "icon": "fa-solid fa-book"
+    },
+    {
+        "value": "Shopping",
+        "label": "Shopping",
+        "icon": "fa-solid fa-basket-shopping"
+    },
+    {
+        "value": "Entertainment",
+        "label": "Entertainment",
+        "icon": "fa-solid fa-gamepad"
+    },
+    {
+        "value": "Bills",
+        "label": "Bills",
+        "icon": "fa-solid fa-lightbulb"
+    },
+    {
+        "value": "Other",
+        "label": "Other",
+        "icon": "fa-solid fa-box"
+    }
+]

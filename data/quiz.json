@@ -1,0 +1,24 @@
+{
+    "question": "Which one is a saving?",
+    "text": "Pick the answer that puts money aside for the future.",
+    "correct": "saving",
+    "correctMessage": "Correct! Saving ka matlab future goal ke liye paisa side par rakhna hai.",
+    "wrongMessage": "Not quite. Saving ka matlab paisa future goal ke liye side par rakhna hai.",
+    "options": [
+        {
+            "key": "shopping",
+            "icon": "fa-solid fa-shirt",
+            "label": "Buying new clothes"
+        },
+        {
+            "key": "food",
+            "icon": "fa-solid fa-burger",
+            "label": "Buying fast food"
+        },
+        {
+            "key": "saving",
+            "icon": "fa-solid fa-piggy-bank",
+            "label": "Putting money aside for a goal"
+        }
+    ]
+}

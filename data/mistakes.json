@@ -1,0 +1,37 @@
+[
+    {
+        "icon": "fa-solid fa-basket-shopping",
+        "title": "Impulse Buying",
+        "description": "Buying something suddenly without thinking about whether you really need it.",
+        "tip": "Wait 24 hours before buying. If you still want it tomorrow and it fits your budget, then decide.",
+        "delay": 0
+    },
+    {
+        "icon": "fa-solid fa-money-bills",
+        "title": "Ignoring Small Expenses",
+        "description": "Small daily expenses can add up and affect your monthly budget.",
+        "tip": "Record every small purchase in the Expense Planner for one week — the total will surprise you.",
+        "delay": 80
+    },
+    {
+        "icon": "fa-solid fa-clock",
+        "title": "Late Payments",
+        "description": "Forgetting payments can make it harder to manage your monthly expenses.",
+        "tip": "Set a phone reminder a few days before every due date, and pay fixed bills first each month.",
+        "delay": 160
+    },
+    {
+        "icon": "fa-solid fa-mobile-screen",
+        "title": "Unused Subscriptions",
+        "description": "Paying for subscriptions that you rarely or never use.",
+        "tip": "List all your subscriptions, cancel the ones you have not used this month, and review them quarterly.",
+        "delay": 240
+    },
+    {
+        "icon": "fa-solid fa-clipboard-list",
+        "title": "No Spending Plan",
+        "description": "Spending money without making a simple plan can make budgeting difficult.",
+        "tip": "Use the 50-30-20 rule to make a simple monthly plan: 50% needs, 30% wants, 20% savings.",
+        "delay": 320
+    }
+]

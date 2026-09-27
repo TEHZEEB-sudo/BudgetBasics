@@ -1,0 +1,46 @@
+[
+    {
+        "icon": "fa-solid fa-house",
+        "title": "Main",
+        "delay": 0,
+        "links": [
+            { "label": "Home", "href": "#home" },
+            { "label": "About Us", "href": "#about" },
+            { "label": "Feedback", "href": "#feedback" },
+            { "label": "Contact Us", "href": "#contact" }
+        ]
+    },
+    {
+        "icon": "fa-solid fa-book",
+        "title": "Learn",
+        "delay": 80,
+        "links": [
+            { "label": "Budgeting Basics", "href": "#basics" },
+            { "label": "Needs vs Wants", "href": "#needs" },
+            { "label": "50-30-20 Rule", "href": "#rule" },
+            { "label": "Money Mistakes", "href": "#mistakes" },
+            { "label": "Sitemap", "href": "#sitemap" }
+        ]
+    },
+    {
+        "icon": "fa-solid fa-screwdriver-wrench",
+        "title": "Tools",
+        "delay": 160,
+        "links": [
+            { "label": "Savings Goals", "href": "#saving" },
+            { "label": "Expense Planner", "href": "#expenses" },
+            { "label": "Search Topics", "href": "#search" },
+            { "label": "Budget Basic Assistant", "href": "#chatbot" }
+        ]
+    },
+    {
+        "icon": "fa-solid fa-chart-column",
+        "title": "Resources",
+        "delay": 240,
+        "links": [
+            { "label": "Infographics", "href": "#infographics" },
+            { "label": "Give Feedback", "href": "#feedback" },
+            { "label": "Get Support", "href": "#contact" }
+        ]
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Budgeting",
+        "description": "Learn how to plan your monthly money.",
+        "dateAdded": "2026-01-05",
+        "relevance": 80,
+        "delay": 0
+    },
+    {
+        "title": "Needs vs Wants",
+        "description": "Understand the difference between needs and wants.",
+        "dateAdded": "2026-03-18",
+        "relevance": 95,
+        "delay": 100
+    },
+    {
+        "title": "Savings",
+        "description": "Learn how to create savings goals.",
+        "dateAdded": "2026-02-10",
+        "relevance": 90,
+        "delay": 200
+    },
+    {
+        "title": "Expenses",
+        "description": "Track and manage your expenses.",
+        "dateAdded": "2026-04-02",
+        "relevance": 85,
+        "delay": 300
+    },
+    {
+        "title": "50-30-20 Rule",
+        "description": "Learn a simple way to divide your income.",
+        "dateAdded": "2026-05-20",
+        "relevance": 100,
+        "delay": 400
+    }
+]

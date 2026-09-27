@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BudgetBasics - Smart Money Habits</title>
+
+    <link rel="icon" type="image/png" href="image/logo.png">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/aos@next/dist/aos.css"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="splashScreen">
+
+        <img
+            src="image/logo.png"
+            alt="BudgetBasics logo"
+            class="splash-logo"
+        >
+
+        <div class="splash-spinner"></div>
+
+    </div>
+
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <span><img src="image/logo.png" width="200%" height="80px" alt="Logo"></span>   &nbsp  BudgetBasics
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#basics">Budgeting Basics</a></li>
+                <li><a href="#needs">Needs vs Wants</a></li>
+                <li><a href="#saving">Savings</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                onclick="toggleTheme()"
+                aria-label="Toggle dark mode"
+                title="Toggle dark mode"
+            >
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button class="menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+
+        </nav>
+    </header>
+
+
+    <section id="home" class="hero">
+
+        <!-- Visitor counter + live date/time (SRS) -->
+        <div class="hero-meta" data-aos="fade-down">
+
+            <span class="visitor-counter">
+                <i class="fa-solid fa-eye"></i>
+                Visitors: <strong id="visitorCount">1</strong>
+            </span>
+
+            <span class="meta-divider">·</span>
+
+            <span class="live-clock" id="liveClock">
+                --
+            </span>
+
+        </div>
+
+        <!-- Financial tips ticker (SRS) -->
+        <div class="tips-ticker" aria-hidden="true">
+
+            <div class="ticker-track" id="tickerTrack">
+                <!-- Ticker tips load from data/tips.json -->
+            </div>
+
+        </div>
+
+        <div class="hero-content">
+
+            <div class="hero-text" data-aos="zoom-in-left">
+
+                <span class="small-title">
+                    NEXTGEN BUDGETBEE
+                </span>
+
+                <h1>
+                    Learn to Manage Your
+                    <span>Money Smarter</span>
+                </h1>
+
+                <p>
+                    BudgetBasics is a student-friendly educational
+                    website that helps you understand budgeting,
+                    saving, spending and better money habits.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#basics" class="btn primary-btn">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Start Learning
+                    </a>
+
+                    <a href="#needs" class="btn secondary-btn">
+                        Explore More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-money-wrap" data-aos="zoom-in-right">
+
+            <div class="money-card" data-aos="zoom-in-right">
+
+                <div class="card-top">
+
+                    <div class="money-card-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                    <span class="money-card-label">Smart Budget</span>
+
+                </div>
+
+                <div class="money-card-input">
+
+                    <label for="heroIncome">
+                        Monthly Income
+                    </label>
+
+                    <div class="money-card-input-box">
+
+                        <span>Rs.</span>
+
+                        <input
+                            type="number"
+                            id="heroIncome"
+                            min="0"
+                            value="20000"
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="money-card-amount">
+                    Rs. <span id="heroIncomeDisplay">20,000</span>
+                </div>
+
+                <div class="budget-row">
+
+                    <div class="budget-row-label">
+                        <i class="fa-solid fa-house"></i>
+                        Needs (50%)
+                    </div>
+
+                    <div class="budget-row-value">
+                        Rs. <span id="heroNeeds">10,000</span>
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-bar" id="heroNeedsBar"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="budget-row">
+
+                    <div class="budget-row-label">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        Wants (30%)
+                    </div>
+
+                    <div class="budget-row-value">
+                        Rs. <span id="heroWants">6,000</span>
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-bar" id="heroWantsBar"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="budget-row">
+
+                    <div class="budget-row-label">
+                        <i class="fa-solid fa-bullseye"></i>
+                        Savings (20%)
+                    </div>
+
+                    <div class="budget-row-value">
+                        Rs. <span id="heroSavings">4,000</span>
+                    </div>
+
+                    <div class="progress">
+
+                        <div class="progress-bar" id="heroSavingsBar"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="intro" id="intro">
+
+        <div class="section-heading" data-aos="zoom-in">
+
+            <span>LEARN • PLAN • SAVE</span>
+
+            <h2>
+                Your Simple Guide to
+                <span>Better Budgeting</span>
+            </h2>
+
+            <p>
+                Understand your income, expenses, needs, wants
+                and savings through simple examples and
+                interactive learning.
+            </p>
+
+        </div>
+
+
+        <div class="feature-container">
+
+            <div class="feature-card" data-aos="zoom-in">
+
+                <div class="icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+
+                <h3>Income</h3>
+
+                <p>
+                    Learn where your money comes from and
+                    understand your monthly income.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
+
+                <h3>Expenses</h3>
+
+                <p>
+                    Understand where your money goes and
+                    identify unnecessary spending.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+
+                <div class="icon"><i class="fa-solid fa-bullseye"></i></div>
+
+                <h3>Savings Goals</h3>
+
+                <p>
+                    Set simple saving goals and learn how
+                    small savings can build better habits.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+
+                <div class="icon"><i class="fa-solid fa-chart-column"></i></div>
+
+                <h3>Budget Planning</h3>
+
+                <p>
+                    Learn how to divide your money into
+                    useful spending categories.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="basics-section" id="basics">
+
+        <div class="section-heading" data-aos="zoom-in">
+            <span>BUDGETING BASICS</span>
+
+            <h2>
+                Understand Your <span>Money</span>
+            </h2>
+
+            <p>
+                Before creating a budget, it is important to understand your income, expenses, needs, wants, and savings.
+            </p>
+        </div>
+
+
+        <div class="basics-cards">
+
+            <div class="basic-card" data-aos="zoom-in">
+                <div class="basic-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+
+                <h3>Income</h3>
+
+                <p>
+                    Money received from an allowance, scholarship, part-time work, or any other source. It helps you manage your monthly budget.
+                </p>
+
+                <div class="example">
+                    Example: Rs. 20,000
+                </div>
+            </div>
+
+
+            <div class="basic-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="basic-icon"><i class="fa-solid fa-thumbtack"></i></div>
+
+                <h3>Fixed Expenses</h3>
+
+                <p>
+                    Expenses that usually stay the same every
+                    month and are easy to plan for.These expenses are usually regular and predictable.
+
+                </p>
+
+                <div class="example">
+                    Example: Transport
+                </div>
+            </div>
+
+
+            <div class="basic-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="basic-icon"><i class="fa-solid fa-basket-shopping"></i></div>
+
+                <h3>Variable Expenses</h3>
+
+                <p>
+                    Expenses that can change from month to month,such as food and shopping.These expenses may increase or decrease each month.
+                </p>
+
+                <div class="example">
+                    Example: Shopping
+                </div>
+            </div>
+
+
+            <div class="basic-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="basic-icon"><i class="fa-solid fa-bullseye"></i></div>
+
+                <h3>Savings</h3>
+
+                <p>
+                    A portion of your income that you save
+                    for future goals or unexpected needs.
+                    Saving money helps you prepare for future Jexpenses.
+                </p>
+
+                <div class="example">
+                    Example: Rs. 4,000
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="sample-budget">
+
+            <div class="budget-info">
+
+                <span>SAMPLE STUDENT BUDGET</span>
+
+                <h2>Monthly Budget</h2>
+
+                <p>
+                    This is just a simple budget for learning purpose.
+                </p>
+
+            </div>
+
+
+            <div class="budget-table">
+
+                <div class="table-row heading">
+                    <span>Category</span>
+                    <span>Amount</span>
+                </div>
+
+                <div class="table-row">
+                    <span><i class="fa-solid fa-money-bill-wave"></i> Income</span>
+                    <strong>Rs. 20,000</strong>
+                </div>
+
+                <div class="table-row">
+                    <span><i class="fa-solid fa-house"></i> Needs</span>
+                    <strong>Rs. 10,000</strong>
+                </div>
+
+                <div class="table-row">
+                    <span><i class="fa-solid fa-basket-shopping"></i> Wants</span>
+                    <strong>Rs. 6,000</strong>
+                </div>
+
+                <div class="table-row">
+                    <span><i class="fa-solid fa-bullseye"></i> Savings</span>
+                    <strong>Rs. 4,000</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="knowledge-box">
+
+            <span class="quiz-tag"> QUICK KNOWLEDGE CHECK</span>
+
+            <h2 id="quizQuestion">
+                Loading quiz...
+            </h2>
+
+            <p class="quiz-text" id="quizText">
+                Loading quiz content...
+            </p>
+
+            <div class="quiz-options" id="quizOptions"></div>
+
+            <p id="quiz-result"></p>
+
+        </div>
+
+    </section>
+
+
+    <section class="needs-section" id="needs">
+
+        <div class="section-heading dark-heading" data-aos="zoom-in">
+
+            <span>SMART SPENDING</span>
+
+            <h2>
+                Needs <span>vs</span> Wants
+            </h2>
+
+            <p>
+                Before every purchase, ask yourself:"Do i really need this, or do i simply want it?"
+            </p>
+
+        </div>
+
+
+        <div class="classification-container">
+
+            <div class="classification-card need" data-aos="zoom-in">
+
+                <h2>Needs</h2>
+
+                <p>
+                    Needs are essential things we require for daily life,
+                    education, and meeting our basic requirements.
+                </p>
+
+                <div class="item-list">
+
+                    <div>
+                        <span><i class="fa-solid fa-apple-whole"></i></span>
+                        <strong>Food</strong>
+                    </div>
+
+                    <div>
+                        <span><i class="fa-solid fa-book"></i></span>
+                        <strong>Books &amp; Education</strong>
+                    </div>
+
+                    <div>
+                        <span><i class="fa-solid fa-bus"></i></span>
+                        <strong>Transport</strong>
+                    </div>
+
+                    <div>
+                        <span><i class="fa-solid fa-house"></i></span>
+                        <strong>Basic Requirements</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="classification-card want" data-aos="zoom-in" data-aos-delay="150">
+
+                <h2>Wants</h2>
+
+                <p>
+                    Wants are things we enjoy having because they make
+                    life more comfortable or entertaining, but they are not essential.
+                </p>
+
+                <div class="item-list">
+
+                    <div>
+                        <span><i class="fa-solid fa-gamepad"></i></span>
+                        <strong>Gaming</strong>
+                    </div>
+
+                    <div>
+                        <span><i class="fa-solid fa-basket-shopping"></i></span>
+                        <strong>Extra Shopping</strong>
+                    </div>
+
+                    <div>
+                        <span><i class="fa-solid fa-clapperboard"></i></span>
+                        <strong>Entertainment</strong>
+                    </div>
+
+                    <div>
+                        <span><i class="fa-solid fa-stopwatch"></i></span>
+                        <strong>New Accessories</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Interactive Needs vs Wants classifier (SRS) -->
+        <div class="classify-box" data-aos="zoom-in">
+
+            <span class="quiz-tag"> INTERACTIVE CLASSIFIER </span>
+
+            <h2>
+                Need <span>or</span> Want?
+            </h2>
+
+            <p class="classify-text">
+                Look at the item below and decide whether it is a
+                need or a want. You get instant feedback!
+            </p>
+
+            <div class="classify-item">
+
+                <i id="classifyIcon" class="fa-solid fa-gamepad"></i>
+
+                <h3 id="classifyItem">Loading...</h3>
+
+            </div>
+
+            <div class="classify-buttons">
+
+                <button class="classify-btn need-btn" onclick="classifyAnswer('need')">
+                    <i class="fa-solid fa-house"></i>
+                    Need
+                </button>
+
+                <button class="classify-btn want-btn" onclick="classifyAnswer('want')">
+                    <i class="fa-solid fa-gamepad"></i>
+                    Want
+                </button>
+
+            </div>
+
+            <p id="classifyFeedback"></p>
+
+            <button class="classify-next" onclick="nextClassifyItem()">
+                <i class="fa-solid fa-rotate-right"></i>
+                Next Item
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="rule-section" id="rule">
+
+        <div class="section-title" data-aos="zoom-in">
+            <h2>50-30-20 Budget Rule</h2>
+            <p>A simple way to divide your monthly income</p>
+        </div>
+
+        <div class="rule-container">
+
+            <div class="rule-card" data-aos="zoom-in">
+                <div class="rule-number">50%</div>
+                <h3>Needs</h3>
+                <p>
+                    Use 50% of your income for important expenses
+                    like food, transport and education.
+                </p>
+            </div>
+
+            <div class="rule-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="rule-number">30%</div>
+                <h3>Wants</h3>
+                <p>
+                    Use 30% for things you enjoy, such as shopping,
+                    entertainment and hobbies.
+                </p>
+            </div>
+
+            <div class="rule-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="rule-number">20%</div>
+                <h3>Savings</h3>
+                <p>
+                    Keep 20% of your income for savings and future goals.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="budget-calculator">
+
+        <h3>Calculate Your Budget</h3>
+
+        <p class="calculator-text">
+            Enter your monthly income and see how you can divide
+            your money between needs, wants, and savings.
+        </p>
+
+        <label for="income">
+            Monthly Income
+        </label>
+
+        <div class="input-box">
+            <span>Rs.</span>
+
+            <input
+                type="number"
+                id="income"
+                placeholder="Enter your income"
+            >
+        </div>
+
+        <div id="budgetResult" class="budget-result"></div>
+
+    </div>
+
+
+    <section class="savings-section" id="saving">
+
+        <div class="section-title" data-aos="zoom-in">
+            <h2><i class="fa-solid fa-bullseye"></i> Savings Goals</h2>
+            <p>Plan your savings and reach your financial goals</p>
+        </div>
+
+        <div class="saving-container">
+
+            <div class="saving-card" data-aos="zoom-in-left">
+
+                <h3>Set Your Goal</h3>
+
+                <input
+                    type="text"
+                    id="goalName"
+                    placeholder="Goal name e.g. New Laptop"
+                >
+
+                <input
+                    type="number"
+                    id="targetAmount"
+                    placeholder="Target amount"
+                >
+
+                <input
+                    type="number"
+                    id="currentSaving"
+                    placeholder="Current savings"
+                >
+
+                <input
+                    type="number"
+                    id="monthlySaving"
+                    placeholder="Monthly contribution"
+                >
+
+                <button onclick="calculateSaving()">
+                    <i class="fa-solid fa-calculator"></i>
+                    Calculate Goal
+                </button>
+
+                <div id="savingResult"></div>
+
+            </div>
+
+            <div class="saving-info" data-aos="zoom-in-right">
+
+                <h3><i class="fa-solid fa-lightbulb"></i> Saving Tips</h3>
+
+                <ul id="savingTipsList"></ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="expense-section" id="expenses">
+
+        <div class="section-title" data-aos="zoom-in">
+            <h2><i class="fa-solid fa-receipt"></i> Expense Planner</h2>
+            <p>Plan, add, edit and track your monthly expenses</p>
+        </div>
+
+        <div class="expense-planner">
+
+            <div class="expense-form">
+
+                <h3><i class="fa-solid fa-circle-plus"></i> Add Expense</h3>
+
+                <div class="expense-input-group">
+
+                    <label for="expenseName">
+                        Expense Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="expenseName"
+                        placeholder="e.g. Food, Transport, Books"
+                    >
+
+                </div>
+
+
+                <div class="expense-input-group">
+
+                    <label for="expenseCategory">
+                        Category
+                    </label>
+
+                    <select id="expenseCategory">
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <!-- Remaining options load from data/expenseCategories.json -->
+
+                    </select>
+
+                </div>
+
+
+                <div class="expense-input-group">
+
+                    <label for="expenseAmount">
+                        Amount
+                    </label>
+
+                    <div class="expense-amount-input">
+
+                        <span>Rs.</span>
+
+                        <input
+                            type="number"
+                            id="expenseAmount"
+                            placeholder="Enter amount"
+                            min="0"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="expense-input-group">
+
+                    <label for="expenseDate">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="expenseDate"
+                    >
+
+                </div>
+
+
+                <button
+                    class="add-expense-btn"
+                    onclick="addExpense()"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Add Expense
+                </button>
+
+                <p id="expenseMessage"></p>
+
+            </div>
+
+
+            <div class="expense-summary">
+
+                <h3><i class="fa-solid fa-chart-column"></i> Expense Summary</h3>
+
+                <div class="summary-cards">
+
+                    <div class="summary-card total">
+                        <span><i class="fa-solid fa-money-bill-trend-up"></i></span>
+
+                        <div>
+                            <p>Total Expenses</p>
+                            <strong>
+                                Rs. <span id="totalExpense">0</span>
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div class="summary-card count">
+                        <span><i class="fa-solid fa-receipt"></i></span>
+
+                        <div>
+                            <p>Total Items</p>
+                            <strong id="expenseCount">
+                                0
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div class="summary-card average">
+                        <span><i class="fa-solid fa-chart-line"></i></span>
+
+                        <div>
+                            <p>Average Expense</p>
+                            <strong>
+                                Rs. <span id="averageExpense">0</span>
+                            </strong>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="expense-budget">
+
+                    <h4>Monthly Expense Budget</h4>
+
+                    <div class="budget-input">
+
+                        <span>Rs.</span>
+
+                        <input
+                            type="number"
+                            id="expenseBudget"
+                            placeholder="Set budget"
+                            min="0"
+                            oninput="updateExpenseBudget()"
+                        >
+
+                    </div>
+
+                    <div class="budget-progress">
+
+                        <div
+                            id="expenseProgress"
+                            class="budget-progress-bar"
+                        ></div>
+
+                    </div>
+
+                    <p id="budgetStatus">
+                        Set a budget to track your spending.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="expense-table-container">
+
+            <div class="expense-table-header">
+
+                <div>
+                    <span>YOUR EXPENSES</span>
+                    <h3>Expense List</h3>
+                </div>
+
+                <button
+                    class="clear-expenses-btn"
+                    onclick="clearExpenses()"
+                >
+                    <i class="fa-solid fa-trash-can"></i> Clear All
+                </button>
+
+            </div>
+
+
+            <div class="expense-table">
+
+                <div class="expense-table-row expense-heading">
+
+                    <span>Expense</span>
+                    <span>Category</span>
+                    <span>Date</span>
+                    <span>Amount</span>
+                    <span>Action</span>
+
+                </div>
+
+
+                <div id="expenseItems">
+
+                    <div class="empty-expense">
+
+                        <div><i class="fa-solid fa-receipt"></i></div>
+
+                        <h3>No expenses added yet</h3>
+
+                        <p>
+                            Add your first expense above to start
+                            tracking your spending.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="expense-tips">
+
+            <div class="expense-tip">
+
+                <span><i class="fa-solid fa-lightbulb"></i></span>
+
+                <div>
+                    <h4>Track Small Expenses</h4>
+
+                    <p>
+                        Small daily expenses can add up.
+                        Recording them helps you understand
+                        where your money goes.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="expense-tip">
+
+                <span><i class="fa-solid fa-bullseye"></i></span>
+
+                <div>
+                    <h4>Stay Within Your Budget</h4>
+
+                    <p>
+                        Set a monthly spending limit and
+                        regularly check your progress.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="expense-tip">
+
+                <span><i class="fa-solid fa-chart-column"></i></span>
+
+                <div>
+                    <h4>Review Your Spending</h4>
+
+                    <p>
+                        Look at your expenses regularly and
+                        identify areas where you can plan better.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="mistakes-section" id="mistakes">
+
+        <div class="section-title" data-aos="zoom-in">
+            <h2><i class="fa-solid fa-triangle-exclamation"></i> Common Money Mistakes</h2>
+            <p>Learn how to avoid common spending mistakes</p>
+        </div>
+
+        <div class="mistakes-container" id="mistakesContainer"></div>
+
+    </section>
+
+
+    <section class="info-section" id="infographics">
+
+        <div class="section-title" data-aos="zoom-in">
+            <h2><i class="fa-solid fa-chart-column"></i> Budget Infographics</h2>
+            <p>Understand budgeting through simple visuals</p>
+        </div>
+
+        <div class="info-filter" data-aos="zoom-in">
+
+            <button class="filter-btn active" data-filter="all" onclick="filterInfographics('all', this)">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="fifty" onclick="filterInfographics('fifty', this)">
+                50-30-20
+            </button>
+
+            <button class="filter-btn" data-filter="needs-wants" onclick="filterInfographics('needs-wants', this)">
+                Needs-Wants
+            </button>
+
+            <button class="filter-btn" data-filter="cycle" onclick="filterInfographics('cycle', this)">
+                Cycle
+            </button>
+
+            <button class="filter-btn" data-filter="savings" onclick="filterInfographics('savings', this)">
+                Savings
+            </button>
+
+        </div>
+
+        <div class="info-container">
+
+            <!-- Needs-Wants category -->
+            <div class="info-card" data-category="needs-wants" data-aos="zoom-in">
+
+                <div class="chart">
+                    <div class="chart-part">
+                        50%
+                    </div>
+                </div>
+
+                <h3>Needs</h3>
+
+                <p>
+                    Half of your income can be planned
+                    for essential needs.
+                </p>
+
+            </div>
+
+
+            <div class="info-card" data-category="needs-wants" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="chart">
+                    <div class="chart-part">
+                        30%
+                    </div>
+                </div>
+
+                <h3>Wants</h3>
+
+                <p>
+                    A smaller portion can be used for
+                    entertainment and personal wants.
+                </p>
+
+            </div>
+
+
+            <div class="info-card" data-category="fifty" data-aos="zoom-in" data-aos-delay="200">
+
+                <div class="chart">
+                    <div class="chart-part">
+                        20%
+                    </div>
+                </div>
+
+                <h3>Savings</h3>
+
+                <p>
+                    Keep a portion of your income
+                    for future goals.
+                </p>
+
+            </div>
+
+
+            <!-- Monthly Budget Cycle infographic (SRS) -->
+            <div class="info-card" data-category="cycle" data-aos="zoom-in">
+
+                <div class="cycle-chart">
+
+                    <span class="cycle-step c1">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        Income
+                    </span>
+
+                    <span class="cycle-step c2">
+                        <i class="fa-solid fa-list-check"></i>
+                        Plan
+                    </span>
+
+                    <span class="cycle-step c3">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        Spend
+                    </span>
+
+                    <span class="cycle-step c4">
+                        <i class="fa-solid fa-bullseye"></i>
+                        Save
+                    </span>
+
+                    <div class="cycle-ring"></div>
+
+                </div>
+
+                <h3>Monthly Budget Cycle</h3>
+
+                <p>
+                    Income, plan, spend, save — then repeat
+                    the cycle every month.
+                </p>
+
+            </div>
+
+
+            <!-- Saving Challenge infographic (SRS) -->
+            <div class="info-card" data-category="savings" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="challenge-chart">
+
+                    <div class="challenge-bar" style="--h: 20%;">
+                        <span>W1</span>
+                    </div>
+
+                    <div class="challenge-bar" style="--h: 40%;">
+                        <span>W2</span>
+                    </div>
+
+                    <div class="challenge-bar" style="--h: 60%;">
+                        <span>W3</span>
+                    </div>
+
+                    <div class="challenge-bar" style="--h: 80%;">
+                        <span>W4</span>
+                    </div>
+
+                    <div class="challenge-bar" style="--h: 100%;">
+                        <span>W5</span>
+                    </div>
+
+                </div>
+
+                <h3>Saving Challenge</h3>
+
+                <p>
+                    Grow your savings a little more
+                    every week of the month.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="search-section" id="search">
+
+        <div class="section-title" data-aos="zoom-in">
+
+            <h2><i class="fa-solid fa-magnifying-glass"></i> Search Budget Topics</h2>
+
+            <p>Find useful budgeting topics quickly</p>
+
+        </div>
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search topics..."
+            onkeyup="searchTopics()"
+        >
+
+        <!-- Topic sort controls (SRS) -->
+        <div class="topic-sort" data-aos="zoom-in">
+
+            <span class="sort-label">
+                <i class="fa-solid fa-arrow-down-short-wide"></i>
+                Sort by:
+            </span>
+
+            <button class="sort-btn active" data-sort="newest" onclick="sortTopics('newest', this)">
+                Newest
+            </button>
+
+            <button class="sort-btn" data-sort="az" onclick="sortTopics('az', this)">
+                A-Z
+            </button>
+
+            <button class="sort-btn" data-sort="relevance" onclick="sortTopics('relevance', this)">
+                Most Relevant
+            </button>
+
+        </div>
+
+        <div class="topic-container" id="topicContainer"></div>
+
+    </section>
+
+
+    <section class="chatbot-section" id="chatbot">
+
+        <div class="section-title" data-aos="zoom-in">
+
+            <h2><i class="fa-solid fa-robot"></i> Budget Basic Assistant</h2>
+
+            <p>
+                Ask simple questions about budgeting
+            </p>
+
+        </div>
+
+
+        <div class="chatbot">
+
+            <div id="chatMessages" class="chat-messages">
+
+                <div class="bot-message">
+                    Hi! 👋 I'm Budget Basic.
+                    Ask me something about budgeting.
+                </div>
+
+            </div>
+
+
+            <div class="chat-input">
+
+                <input
+                    type="text"
+                    id="chatInput"
+                    placeholder="Ask a question..."
+                    onkeypress="handleChat(event)"
+                >
+
+                <button onclick="sendMessage()">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Send
+                </button>
+
+            </div>
+
+        </div>
+
+        <p class="chat-note">
+            Note: Budget Basic provides general educational
+            information and is not professional financial advice.
+        </p>
+
+    </section>
+
+
+    <section class="about-section" id="about">
+
+        <div class="section-title" data-aos="zoom-in">
+            <h2><i class="fa-solid fa-lightbulb"></i> About BudgetBasics</h2>
+            <p>Learn today, manage your money better tomorrow</p>
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-content" data-aos="zoom-in-left">
+
+                <h3>What is BudgetBasics?</h3>
+
+                <p>
+                    BudgetBasics is an educational website designed
+                    to help students understand basic money management.
+                </p>
+
+                <p>
+                    It provides simple information about income,
+                    expenses, needs, wants, savings and budgeting.
+                </p>
+
+                <div class="about-points">
+
+                    <div>
+                        <span><i class="fa-solid fa-check"></i></span>
+                        Easy to understand
+                    </div>
+
+                    <div>
+                        <span><i class="fa-solid fa-check"></i></span>
+                        Student friendly
+                    </div>
+
+                    <div>
+                        <span><i class="fa-solid fa-check"></i></span>
+                        Interactive tools
+                    </div>
+
+                    <div>
+                        <span><i class="fa-solid fa-check"></i></span>
+                        Simple budgeting concepts
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="about-box" data-aos="zoom-in-right">
+
+                <div class="about-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+
+                <h3>Our Goal</h3>
+
+                <p>
+                    To make financial education simple,
+                    useful and easy to understand.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="feedback-section" id="feedback">
+
+        <div class="section-title" data-aos="zoom-in">
+
+            <h2><i class="fa-solid fa-star"></i> Give Your Feedback</h2>
+
+            <p>Tell us what you think about BudgetBasics</p>
+
+        </div>
+
+        <div class="feedback-box">
+
+            <input
+                type="text"
+                id="feedbackName"
+                placeholder="Your Name"
+            >
+
+            <input
+                type="email"
+                id="feedbackEmail"
+                placeholder="Your Email"
+            >
+
+            <select id="feedbackRating">
+
+                <option value="">
+                    Select Rating
+                </option>
+
+                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                <option value="4">⭐⭐⭐⭐ Very Good</option>
+                <option value="3">⭐⭐⭐ Good</option>
+                <option value="2">⭐⭐ Needs Improvement</option>
+                <option value="1">⭐ Poor</option>
+
+            </select>
+
+            <textarea
+                id="feedbackMessage"
+                placeholder="Write your feedback..."
+            ></textarea>
+
+            <button onclick="submitFeedback()">
+                <i class="fa-solid fa-paper-plane"></i>
+                Submit Feedback
+            </button>
+
+            <p id="feedbackResult"></p>
+
+        </div>
+
+    </section>
+
+
+    <section class="sitemap-section" id="sitemap">
+
+        <div class="section-title" data-aos="zoom-in">
+            <h2><i class="fa-solid fa-sitemap"></i> Website Sitemap</h2>
+            <p>Explore all sections of BudgetBasics</p>
+        </div>
+
+        <div class="sitemap-container" id="sitemapContainer"></div>
+
+    </section>
+
+
+    <section class="contact-section" id="contact">
+
+        <div class="section-title" data-aos="zoom-in">
+
+            <h2><i class="fa-solid fa-envelope"></i> Contact Us</h2>
+
+            <p>Have a question or suggestion? Send us a message</p>
+
+        </div>
+
+        <div class="feedback-box contact-box">
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Your Name"
+            >
+
+            <input
+                type="email"
+                id="contactEmail"
+                placeholder="Your Email"
+            >
+
+            <input
+                type="text"
+                id="contactSubject"
+                placeholder="Subject"
+            >
+
+            <textarea
+                id="contactMessage"
+                placeholder="Write your message..."
+            ></textarea>
+
+            <button onclick="submitContact()">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Message
+            </button>
+
+            <p id="contactResult"></p>
+
+        </div>
+
+    </section>
+
+
+    <footer class="main-footer">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span>
+                        <img
+                            src="image/logo.png"
+                            alt="BudgetBasics logo"
+                        >
+                    </span>
+                    <h2>BudgetBasics</h2>
+                </div>
+
+                <p>
+                    Smart money habits made simple.
+                    Learn, plan, save and make better
+                    spending decisions.
+                </p>
+
+                <div class="footer-badge">
+                    💡 Learn • Plan • Save
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#basics">Budgeting Basics</a>
+                <a href="#needs">Needs vs Wants</a>
+                <a href="#saving">Savings</a>
+                <a href="#expenses">Expenses</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Learn</h3>
+
+                <a href="#rule">50-30-20 Rule</a>
+                <a href="#mistakes">Money Mistakes</a>
+                <a href="#infographics">Infographics</a>
+                <a href="#search">Search Topics</a>
+                <a href="#about">About Us</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Get in Touch</h3>
+
+                <p><i class="fa-solid fa-envelope"></i> info@budgetbasics.com</p>
+                <p><i class="fa-solid fa-phone"></i> 0300-1234567</p>
+                <p><i class="fa-solid fa-location-dot"></i> Pakistan</p>
+
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 <strong>BudgetBasics</strong>.
+                All Rights Reserved.
+            </p>
+
+            <p>
+                Made with 💚 for smarter money habits.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Back-to-top button (SRS) -->
+    <button
+        class="back-to-top"
+        id="backToTop"
+        onclick="scrollToTop()"
+        aria-label="Back to top"
+        title="Back to top"
+    >
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

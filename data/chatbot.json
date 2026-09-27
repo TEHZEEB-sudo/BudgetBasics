@@ -1,0 +1,64 @@
+{
+    "responses": [
+        {
+            "keywords": ["difference between needs and wants", "needs vs wants", "need and want"],
+            "response": "Needs are essential things like food, education and transport, while wants are extras you enjoy but can live without."
+        },
+        {
+            "keywords": ["fixed expense", "fixed cost", "fixed expenses"],
+            "response": "Fixed expenses stay about the same every month, like transport fares or rent."
+        },
+        {
+            "keywords": ["variable expense", "variable cost", "variable expenses"],
+            "response": "Variable expenses go up and down each month, like food, shopping and entertainment."
+        },
+        {
+            "keywords": ["track my expenses", "track expenses", "expense planner", "track spending"],
+            "response": "Use the Expense Planner on this page to record every expense and watch your monthly total."
+        },
+        {
+            "keywords": ["how much should i save", "how much to save", "how much money should i save"],
+            "response": "The 50-30-20 rule suggests saving about 20% of your income every month."
+        },
+        {
+            "keywords": ["set a savings goal", "set a goal", "savings goal"],
+            "response": "Give your goal a name and a target amount, then use the Savings Goal calculator to see how many months it will take."
+        },
+        {
+            "keywords": ["budget"],
+            "response": "A budget is a plan for how you will use your income."
+        },
+        {
+            "keywords": ["saving", "save"],
+            "response": "Saving means keeping some money for your future goals."
+        },
+        {
+            "keywords": ["need"],
+            "response": "Needs are important things like food, education and transport."
+        },
+        {
+            "keywords": ["want"],
+            "response": "Wants are things you enjoy but can usually live without."
+        },
+        {
+            "keywords": ["expense", "spending"],
+            "response": "Tracking expenses helps you understand where your money is going."
+        },
+        {
+            "keywords": ["50", "rule"],
+            "response": "The 50-30-20 rule suggests 50% for needs, 30% for wants and 20% for savings."
+        },
+        {
+            "keywords": ["goal"],
+            "response": "A savings goal gives you a clear amount and target to work toward."
+        },
+        {
+            "keywords": ["mistake", "mistakes"],
+            "response": "Common money mistakes include impulse buying, ignoring small expenses and paying for unused subscriptions."
+        },
+        {
+            "keywords": [],
+            "response": "I can help you with budgeting, savings, needs, wants and expenses."
+        }
+    ]
+}
